@@ -1,3 +1,8 @@
 <div class="container" > 
-  <p><%= @message %></p>
+  <p><%= @post.post_title  %></p>
+  <p><%= @post.post_author  %></p>
+  <p><%= @post.post_body  %></p>
+  <p><a href = "/post/<%= @post.id %>/edit">EDIT</a>
 </div>
+
+

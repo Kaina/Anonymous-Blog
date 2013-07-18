@@ -1,0 +1,10 @@
+<label for="post_title">Post Title:</label>
+<input id="post_title" type="text" name="post[post_title]" value="<%=@post.try(:post_title)%>">
+<br>
+<label for="post_author">Post Author:</label>
+<input id="post_author" type="text" name="post[post_author]" value="<%=@post.try(:post_author)%>">
+<br>
+<label for="post_body">Post Body:</label>
+<input id="post_body" type="text" name="post[post_body]" value="<%=@post.try(:post_body)%>">
+<input type="submit">
+<br>
