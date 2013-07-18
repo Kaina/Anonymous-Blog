@@ -1,5 +1,6 @@
 <div class="container" > 
- <form id="new-post" action="/post/<%=post.id%>/edit" method="POST">
-  <%= erb :_new_post_form, layout: false %>
-</form>
+  <%= @message%>
+  <form action="/posts/<%=@post.id%>" method="POST">
+    <%= erb :_post_form, layout: false %>
+  </form>
 </div>
