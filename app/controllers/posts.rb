@@ -20,6 +20,7 @@ end
 post '/posts' do
   puts params.inspect
   @post = Post.create(params[:post])
+  @tags = Tag.create(params[:tag])
   @message = "this is our individual new post page"
   erb :show
 end

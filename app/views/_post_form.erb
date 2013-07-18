@@ -8,5 +8,8 @@
 <textarea id="post_body" type="text" name="post[post_body]">
   <%=@post.try(:post_body)%>
 </textarea>
+<br>
+<label for="tags">Post Tags:</label>
+<input id="post_tags" type="text" name="tag[tag_name]" value="<%=@tag.try(:tag_name)%>">
 <input type="submit">
 <br>
