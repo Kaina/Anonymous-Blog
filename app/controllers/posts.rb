@@ -20,7 +20,11 @@ end
 post '/posts' do
   puts params.inspect
   @post = Post.create(params[:post])
-  @tags = Tag.create(params[:tag])
+  
+  params[:tag][:tag_name].split(', ').each do |tag|
+    Tag.find_or_create_by_tag_name(tag)
+  end
+
   @message = "this is our individual new post page"
   erb :show
 end
