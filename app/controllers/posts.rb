@@ -7,7 +7,9 @@ end
 get '/posts/:id' do
   @post = Post.find(params[:id])
   @message = "this is our individual post page"
+  @tags = @post.tags
   erb :show
+
 end
 
 get '/posts/:id/edit' do
@@ -18,14 +20,13 @@ get '/posts/:id/edit' do
 end
 
 post '/posts' do
-  puts params.inspect
   @post = Post.create(params[:post])
   
   params[:tag][:tag_name].split(', ').each do |tag|
-    Tag.find_or_create_by_tag_name(tag)
+    @post.tags.find_or_create_by_tag_name(tag)
   end
 
-  @message = "this is our individual new post page"
+  @tags = @post.tags
   erb :show
 end
 
